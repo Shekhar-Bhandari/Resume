@@ -15,7 +15,7 @@ import resume from "../../images/resume.jpg";
 import tailwind from "../../images/tail.png";
 import ecoeye from "../../images/ecoeye.png";
 import yesno from "../../images/yesno.png";
-
+import weather from '../../images/weather.png'
 const HomePage = () => {
   return (
     <div className="home">
@@ -44,7 +44,7 @@ const HomePage = () => {
 
       {/* Work Buttons */}
       <div className="work">
-        <Link className="seemywork" to="./work">See my work</Link>
+        <Link className="seemywork" to="https://github.com/Shekhar-Bhandari">See my work</Link>
         <Link className="arrow" to="./work">
           <i className="fa-solid fa-arrow-up-right-from-square"></i>
         </Link>
@@ -105,14 +105,14 @@ const HomePage = () => {
         <div className="portfolio-item">
           <div className="project-container">
             <img className="projectImage" src={resume} alt="Resume" />
-            <p className="projectName"><Link to="">My Resume Website</Link></p>
+            <p className="projectName"><Link to="https://github.com/Shekhar-Bhandari/Resume">My Resume Website</Link></p>
           </div>
         </div>
 
         <div className="portfolio-item">
           <div className="project-container">
             <img className="projectImage" src={yesno} alt="Yes No Game" />
-            <p className="projectName"><Link to="">Yes-No Game</Link></p>
+            <p className="projectName"><Link to="https://github.com/Shekhar-Bhandari/YesNo-Game">Yes-No Game</Link></p>
           </div>
         </div>
       </div>
