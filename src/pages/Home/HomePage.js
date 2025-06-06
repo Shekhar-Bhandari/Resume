@@ -14,15 +14,14 @@ import todoApp from "../../images/todoapp.jpg";
 import resume from "../../images/resume.jpg";
 import tailwind from "../../images/tail.png";
 import ecoeye from "../../images/ecoeye.png";
-import yesno from "../../images/yesno.png";
-import weather from '../../images/weather.png'
+import movie from '../../images/movie.png'
 const HomePage = () => {
   return (
     <div className="home">
       {/* Navbar */}
       <div className="navbar">
         <Link className="link" to="./">Home</Link>
-        <Link className="link" to="./about">About</Link>
+        
         <Link className="link" to="./contact">Contact</Link>
       </div>
 
@@ -48,9 +47,15 @@ const HomePage = () => {
         <Link className="arrow" to="./work">
           <i className="fa-solid fa-arrow-up-right-from-square"></i>
         </Link>
-        <Link className="download" to="/resume.pdf" target="_blank" download>
-          &nbsp;&nbsp;&nbsp;Download my CV
-        </Link>
+        <a
+  className="download"
+  href="/resume-new.pdf"
+  target="_blank"
+  download
+>
+  &nbsp;&nbsp;&nbsp;Download my CV
+</a>
+
       </div>
 
       {/* Spacing */}
@@ -87,10 +92,25 @@ const HomePage = () => {
 
       <div className="portfolio-grid">
         {/* Row 1 */}
+
+        <div className="portfolio-item">
+          <div className="project-container">
+            <img className="projectImage" src={movie} alt="Movie" />
+            <p className="projectName"><Link to="https://movie-platform-vzxj.vercel.app/">Movie Website</Link></p>
+          </div>
+        </div>
         <div className="portfolio-item">
           <div className="project-container">
             <img className="projectImage" src={ecoeye} alt="Eco Eye" />
-            <p className="projectName"><Link to="https://github.com/Shekhar-Bhandari/Eco-Eye">Eco-Eye</Link></p>
+            <p className="projectName"><Link to="https://eco-eye.vercel.app/">Eco-Eye</Link></p>
+          </div>
+        </div>
+
+         {/* Row 2 */}
+        <div className="portfolio-item">
+          <div className="project-container">
+            <img className="projectImage" src={resume} alt="Resume" />
+            <p className="projectName"><Link to="https://github.com/Shekhar-Bhandari/Resume">My Resume Website</Link></p>
           </div>
         </div>
 
@@ -101,20 +121,9 @@ const HomePage = () => {
           </div>
         </div>
 
-        {/* Row 2 */}
-        <div className="portfolio-item">
-          <div className="project-container">
-            <img className="projectImage" src={resume} alt="Resume" />
-            <p className="projectName"><Link to="https://github.com/Shekhar-Bhandari/Resume">My Resume Website</Link></p>
-          </div>
-        </div>
+       
 
-        <div className="portfolio-item">
-          <div className="project-container">
-            <img className="projectImage" src={yesno} alt="Yes No Game" />
-            <p className="projectName"><Link to="https://github.com/Shekhar-Bhandari/YesNo-Game">Yes-No Game</Link></p>
-          </div>
-        </div>
+        
       </div>
     </div>
   );
