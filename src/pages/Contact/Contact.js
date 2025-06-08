@@ -1,53 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./Contact.css";
 
 const ContactPage = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitMessage, setSubmitMessage] = useState('');
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitMessage('Thank you for your message! I\'ll get back to you soon.');
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
-      
-      // Clear success message after 5 seconds
-      setTimeout(() => {
-        setSubmitMessage('');
-      }, 5000);
-    }, 1000);
-  };
-
   return (
     <div className="contact">
       {/* Navbar */}
       <div className="navbar">
         <Link className="link" to="/">Home</Link>
- 
         <Link className="link" to="/contact">Contact</Link>
       </div>
 
@@ -104,90 +64,6 @@ const ContactPage = () => {
             </a>
           </div>
         </div>
-
-        {/* Contact Form Section */}
-        <div className="contact-form-section">
-          <h2>Send Me a Message</h2>
-          
-          {submitMessage && (
-            <div className="success-message">
-              <i className="fa-solid fa-check-circle"></i>
-              {submitMessage}
-            </div>
-          )}
-
-          <form className="contact-form" onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="name">Full Name *</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                placeholder="Enter your full name"
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="email">Email Address *</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                placeholder="Enter your email address"
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="subject">Subject *</label>
-              <input
-                type="text"
-                id="subject"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                required
-                placeholder="What's this about?"
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="message">Message *</label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows="6"
-                placeholder="Tell me about your project or inquiry..."
-              ></textarea>
-            </div>
-
-            <button 
-              type="submit" 
-              className="submit-btn"
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? (
-                <>
-                  <i className="fa-solid fa-spinner fa-spin"></i>
-                  Sending...
-                </>
-              ) : (
-                <>
-                  <i className="fa-solid fa-paper-plane"></i>
-                  Send Message
-                </>
-              )}
-            </button>
-          </form>
-        </div>
       </div>
 
       {/* Social Links */}
@@ -206,7 +82,7 @@ const ContactPage = () => {
             <i className="fa-brands fa-twitter"></i>
             <span>Twitter</span>
           </a>
-          <a href="mailto:shekharbhandari0123@gmail.com.com" className="social-link">
+          <a href="mailto:shekharbhandari0123@gmail.com" className="social-link">
             <i className="fa-solid fa-envelope"></i>
             <span>Email</span>
           </a>
