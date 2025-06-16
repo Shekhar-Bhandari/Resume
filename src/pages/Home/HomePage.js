@@ -11,10 +11,11 @@ import mongodbLogo from "../../images/mongodb.png";
 import htmlLogo from "../../images/html.png";
 import cssLogo from "../../images/css.png";
 import todoApp from "../../images/todoapp.jpg";
-import resume from "../../images/resume.jpg";
+import hospital from "../../images/hospital.png";
 import tailwind from "../../images/tail.png";
 import ecoeye from "../../images/ecoeye.png";
 import movie from '../../images/movie.png'
+import imagehub from '../../images/imagehub.png'
 const HomePage = () => {
   return (
     <div className="home">
@@ -92,6 +93,12 @@ const HomePage = () => {
 
       <div className="portfolio-grid">
         {/* Row 1 */}
+        <div className="portfolio-item">
+          <div className="project-container">
+            <img className="projectImage" src={imagehub} alt="imagehub" />
+            <p className="projectName"><Link to="https://imagehub-two.vercel.app/">Image Hub App</Link></p>
+          </div>
+        </div>
 
         <div className="portfolio-item">
           <div className="project-container">
@@ -99,6 +106,15 @@ const HomePage = () => {
             <p className="projectName"><Link to="https://movie-platform-vzxj.vercel.app/">Movie Website</Link></p>
           </div>
         </div>
+
+         {/* Row 2 */}
+        <div className="portfolio-item">
+          <div className="project-container">
+            <img className="projectImage" src={hospital} alt="hospital" />
+            <p className="projectName"><Link to="https://hospital-new-kappa.vercel.app/">Hospital Website</Link></p>
+          </div>
+        </div>
+        
         <div className="portfolio-item">
           <div className="project-container">
             <img className="projectImage" src={ecoeye} alt="Eco Eye" />
@@ -106,20 +122,9 @@ const HomePage = () => {
           </div>
         </div>
 
-         {/* Row 2 */}
-        <div className="portfolio-item">
-          <div className="project-container">
-            <img className="projectImage" src={resume} alt="Resume" />
-            <p className="projectName"><Link to="https://github.com/Shekhar-Bhandari/Resume">My Resume Website</Link></p>
-          </div>
-        </div>
+        
 
-        <div className="portfolio-item">
-          <div className="project-container">
-            <img className="projectImage" src={todoApp} alt="Todo App" />
-            <p className="projectName"><Link to="https://github.com/Shekhar-Bhandari/todo-app">Todo List App</Link></p>
-          </div>
-        </div>
+        
 
        
 
